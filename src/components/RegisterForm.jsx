@@ -1,15 +1,16 @@
 import React from "react";
 import InputEntry from "./InputEntry";
 
-function LoginForm() {
+function RegisterForm() {
   return (
     <form className="form">
-      <h4>Welcome! Please login to continue </h4>
+      <h4>Create your new account </h4>
       <InputEntry type="text" placeholder="username" />
       <InputEntry type="password" placeholder="password" />
-      <button type="submit">Login</button>
+      <InputEntry type="password" placeholder="confirm password" />
+      <button type="submit">Register</button>
     </form>
   );
 }
 
-export default LoginForm;
+export default RegisterForm;

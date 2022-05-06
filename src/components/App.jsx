@@ -1,22 +1,25 @@
 import React from "react";
 import LoginForm from "./LoginForm";
+import RegisterForm from "./RegisterForm";
 
-let isLoggedIn = false;
+let isLoggedIn = true;
+let isRegistered = true;
 
-//without applying inline function
-// function renderConditionally() {
-//   if (isLoggedIn) {
-//     return <h1>Hello, I am Zakaria Ibrahim!</h1>;
-//   } else {
-//     return <LoginForm />;
-//   }
-// }
-
-//applying inline function using ternary operator
+//writing inline function using ternary operator
 function App() {
   return (
     <div className="container">
-      {isLoggedIn ? <h1>Hello, I am Zakaria Ibrahim!</h1> : <LoginForm />}
+      {!isRegistered ? (
+        <RegisterForm />
+      ) : isLoggedIn ? (
+        <div>
+          <h1>Hello, I am Zakaria Ibrahim!</h1>
+          <h4>Congratulation! You are logged into my portal.</h4>
+          <p className="chekmark">&#10004;</p>
+        </div>
+      ) : (
+        <LoginForm />
+      )}
     </div>
   );
 }
